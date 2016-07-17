@@ -16,10 +16,10 @@ $(document).ready(function() {
                 }
             }
         });
-    }/* else {
+    } else {
         var jsData = window.sessionStorage.getItem("main-content");
         $('#main-content').html(jsData);
-    }*/
+    }
 
     $('.nav a').click(function() {
         var $linkClicked = $(this).attr('href');
