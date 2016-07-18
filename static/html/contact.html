@@ -1,0 +1,29 @@
+<div id="map"></div>
+<!--Google Maps Scripts-->
+<script>
+  function initMap() {
+    var mapDiv = document.getElementById('map');
+    var myLatLng = {lat: 33.866770, lng: -117.969270}
+    var map = new google.maps.Map(mapDiv, {
+        center: myLatLng,
+        zoom: 17
+    });
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Ministerio Profetico Roca de Salvacion'
+    });
+  }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFDjpGlaHxXfNBrd-smErtFEqCZZDR2VA&callback=initMap">
+</script>
+<!--End Google Maps-->
+
+<div class="container">
+    <h1 class="text-center">Contact Us</h1>
+    <h3>Location:</h3>
+    <p>2353 W. Valencia Dr.
+        Section C and D
+        Fullerton CA, 92833</p>
+</div>
