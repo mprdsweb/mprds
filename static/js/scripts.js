@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if(window.location.hash === 0){
+    if(window.location.hash.length === 0){
         loader('home');
     }else{
         var $pageRoot = window.location.hash.replace(/^#/, '');
@@ -7,16 +7,15 @@ $(document).ready(function() {
             loader($pageRoot);
         }
     }
-    function loader(ref){
+    function loader(href){
         $.ajax({
             type: "POST",
             url: "includes/load_html.php",
-            data: 'page='+ref,
+            data: 'page='+href,
             dataType: "html",
             success: function(msg){
                 if(parseInt(msg)!=0){
                     $('#main-content').html(msg);
-                    //$('#main-content #page-content').hide().fadeIn();
                 }
             }
         });

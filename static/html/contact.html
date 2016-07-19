@@ -6,7 +6,8 @@
     var myLatLng = {lat: 33.866770, lng: -117.969270}
     var map = new google.maps.Map(mapDiv, {
         center: myLatLng,
-        zoom: 17
+        zoom: 17,
+        scrollwheel: false
     });
     var marker = new google.maps.Marker({
         position: myLatLng,
@@ -20,10 +21,49 @@
 </script>
 <!--End Google Maps-->
 
+<!--Contact Start Location and Staff START-->
 <div class="container">
-    <h1 class="text-center">Contact Us</h1>
-    <h3>Location:</h3>
-    <p>2353 W. Valencia Dr.
-        Section C and D
-        Fullerton CA, 92833</p>
+    <div class="page-header">
+        <h1 class="text-center">Contact Us</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Location:</h3>
+            <div class="sub-content">
+                <p>2353 W. Valencia Dr.</p>
+                <p>Section C and D</p>
+                <p>Fullerton CA, 92833</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Staff:  </h3>
+            <div class="sub-content">
+                <p><strong>Head Pastor:</strong>
+                <ul>
+                    <li> Francisco HernandezChurch </li>
+                </ul>
+                <br>  <strong>Board:</strong>
+                <ul>
+                    <li>Blanca Hernandez </li>
+                    <li>Debbie Hernandez </li>
+                    <li>Gloria Valdovinos </li>
+                    <li>Ana Alvarez </li>
+                    <li>Rafael Valdovinos </li>
+                </ul>
+                <br><strong>Secretary, Youth and Worship Leader:</strong>
+                <ul>
+                    <li> Debbie Hernandez</li>
+                    <ul>
+                        <li>Phone: (714)273-5754 </li>
+                        <li> Email: hernandezd93@outlook.com </li>
+                    </ul>
+                </ul>
+                <br><strong>Evangelización:</strong>
+                <ul>
+                    <li>Jovita Garcia</p> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+<!--Contact Start Location and Staff END-->
