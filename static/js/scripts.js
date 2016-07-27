@@ -1,7 +1,7 @@
 function loader(url){
     url = url.replace(/^.*[\\/]/, ""); //replaces everything between '/' and '/' with empty string
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "/includes/load_html.php",
         data: 'page='+url,
         dataType: "html",
@@ -29,7 +29,8 @@ $(function() {
         if($pageRoot.length > 0){
             loader($pageRoot);
         }
-    }*/
+    }
+    */
     $('[data-html]').each(function(i, div){
         var url = div.getAttribute("data-html");
         loader(url);
