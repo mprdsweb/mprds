@@ -9,7 +9,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
@@ -19,6 +19,7 @@
     <!--Custom Styles-->
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="/static/css/carousel.css">
+    <link rel="stylesheet" href="/font-awesome-4.6.3/css/font-awesome.min.css">
 
     <!--Calendar info-->
     <script src='/fullcalendar/lib/moment.min.js'></script>
@@ -27,76 +28,96 @@
 </head>
 <body>
     <!--Navigation bar-->
-    <nav class="navbar-inverse navbar-static-top">
-        <div class="nav-container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/home">Ministerios Profético Roca de Salvacion</a>
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/about">About</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ministries<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/ministry">Worship</a></li>
-                            <li><a href="/ministry/men">Men's Ministry</a></li>
-                            <li><a href="/ministry/women">Women's Ministry</a></li>
-                            <li><a href="/ministry/youth">Youth Ministry</a></li>
-                            <li><a href="/ministry/children">Children's Ministry</a></li>
+    <header id="header">
+        <div id="navbar" class="navbar-default navbar-static-top" role="navigation">
+            <div class="nav-container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar" style="margin-top:60px;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand visible-xs" href="/home">
+                        <img src="/media/img/logo.png" height="80" width="80">
+                    </a>
+                </div>
+                <a class="navbar-brand hidden-xs" href="/home" style="position:relative;z-index:99;">
+                    <img src="/media/img/logo.png" height="120" width="120">
+                </a>
+                <div class="rfc-icons pull-right hidden-xs">
+    				<a href="https://www.facebook.com/groups/RDSyouth" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+				</div>
+                <div class="nav-menu-wrapper">
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/about">Meet our Staff</a></li>
+                                    <li><a href="/mission">Mission</a></li>
+                                    <li><a href="/volunteer">Volunteer</a></li>
+                                    <li><a href="/gallery">Media</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ministries<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/ministry/men">Men</a></li>
+                                    <li><a href="/ministry/women">Women</a></li>
+                                    <li><a href="/ministry/youth">Youth</a></li>
+                                    <li><a href="/ministry/children">Children</a></li>
+                                    <li><a href="/ministry">Worship</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/outreach">Outreach Programs</a></li>
+                                    <li><a href="/services/missions">Missions</a></li>
+                                    <li><a href="#">Sembrando la Semilla</a></li>
+                                    <li><a href="/services/bible-studies">Bible Studies</a></li>
+                                    <li><a href="/services/prayer-chain">Prayer Chain</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/calendar">Calendar</a></li>
+                            <li><a href="/donations">Donations</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/outreach">Outreach Programs</a></li>
-                            <li><a href="/services/missions">Missions</a></li>
-                            <li><a href="#">Sembrando la Semilla</a></li>
-                            <li><a href="/services/bible-studies">Bible Studies</a></li>
-                            <li><a href="/services/prayer-chain">Prayer Chain</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/calendar">Calendar</a></li>
-                    <li><a href="/volunteer">Volunteer</a></li>
-                    <li><a href="/media">Media</a></li>
-                    <li><a href="/donations">Donations</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
     <!--End Nav bar-->
     <!--Main-->
     <main id="main-content" data-html="home"></main>
     <!--End Main-->
       <hr class="featurette-divider">
     <!-- FOOTER -->
-    <footer class="container footer">
-        <div class="row" style="margin-top: 1em; margin-bottom: 1em;">
-            <div class="pull-right">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Language
-                    <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="http://mprds.org">English</a></li>
-                        <li><a href="http://sp.mprds.org">Spanish</a></li>
-                    </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="row" style="margin-top: 1em; margin-bottom: 1em;">
+                <div class="pull-right">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Language
+                        <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="http://mprds.org">English</a></li>
+                            <li><a href="http://sp.mprds.org">Spanish</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="pull-right">
-                    <a href="#">Back to top</a>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="pull-right">
+                        <a href="#">Back to top</a>
+                    </div>
+                    <p>Copyright &copy; 2016 Ministerios Profético Roca de Salvacion</p>
                 </div>
-                <p>Copyright &copy; 2016 Ministerios Profético Roca de Salvacion</p>
             </div>
         </div>
     </footer>

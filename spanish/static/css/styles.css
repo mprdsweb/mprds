@@ -1,11 +1,5 @@
 body {
     background: #e9e9e9;
-    font-family: "Lato", Tahoma, Geneva, sans-serif;
-}
-
-#header{
-    -webkit-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.16);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.16);
 }
 
 .footer{
@@ -21,14 +15,6 @@ body {
     .nav-container {
         width: 734px;
     }
-    .navbar-nav{
-        margin-top: 60px;
-    }
-    .nav-menu-wrapper{
-        display:table;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 @media (min-width: 992px){
     .nav-container {
@@ -37,7 +23,7 @@ body {
 }
 @media (min-width: 1200px){
     .nav-container {
-        width: 1200px;
+        width: 1150px;
     }
 }
 .nav-container{
@@ -63,11 +49,4 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-.rfc-icons{
-    margin-top: 30px;
-}
-.rfc-icons a{
-    color: #c6c6c6;
 }

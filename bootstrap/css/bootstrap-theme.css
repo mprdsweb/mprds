@@ -346,10 +346,10 @@ fieldset[disabled] .btn-danger.active {
   background-color: #2e6da4;
 }
 .navbar-default {
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
-  background-image: -o-linear-gradient(top, #ffffff 0%, #f8f8f8 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f8f8f8));
-  background-image: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e1e1df 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #e1e1df 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e1e1df));
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e1e1df 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);

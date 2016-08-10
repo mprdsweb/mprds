@@ -36,16 +36,14 @@ $(function() {
         loader(url);
     });
 
-    $('#navbar a').on("click", function(event) {
-        if($(this).parent().hasClass("rfc-icons"))
-            return;
+    $('nav a').on("click", function(event) {
         if($(event.target).attr('class') != 'dropdown-toggle')
             $('#navbar').collapse('hide');
         event.preventDefault();
         var $linkClicked = $(this).attr("href").replace(/^#/, ""); //replaces every '#' with empty string
         if($linkClicked.length > 0){
             window.history.pushState(null, null, $linkClicked);     //manipulates the history
-            $("#navbar a").parent().removeClass("active");
+            $("nav a").parent().removeClass("active");
             $(this).parent().addClass("active");
             loader($linkClicked);
         }
