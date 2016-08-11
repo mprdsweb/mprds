@@ -1,67 +1,46 @@
-<img class="header-img" src="/media/img/wide_cross.jpg" alt="About Us">
-<div class = "container">
-    <div class="page-header">
-        <h1 class="text-center">About Us</h1>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title"> <strong>Ministerios Profético Roca de Salvacion: </strong></h4>
-        </div>
-        <div class="panel-body">
-            <div class="pull-right">
-                <a href="#">
-                    <img class="img-thumbnail" height="300" width="260" src="/media/img/pastor.jpg" alt="Pastor">
-                </a>
-            </div>
-            <p>Ministerios Profetico Roca de Salvacion was founded on Magnolia Street the city of Fullerton on the the 20th of November 2007.
-                It was led by a man with passion in the belief of God. It was his loyalty and commitment to the gospel
-                that started from his own living room, feeling a sudden desire to fulfill a dream that God had placed in his heart
-                just how God has used many men before. In the book of Genesis, God had called a leader to rise, a champion, with the
-                sole purpose to lead a nation from the hands of Egypt to a new beginning.  For that reason Roca de Salvacion has the same desire to
-                 restore a community back to the laws of God. It all starts in Fullerton, spreading the gospel in correctional facilities, our local
-                 neighborhood, parks, etc. Roca de Salvacion was built from the ground up but with the grace of God it has gained wisdom and the desire
-                 for a higher reach. Starting with only a simple podium and a couple chairs and a small group that consisted of only his wife and kids
-                 and another member. Having no experience, no musical instruments, he decided to act and purchase a small cd player, it was
-                 the only method of worship, singing along to the music. Soon after he realized that his children needed to learn a musical instrument
-                 to to have better worship atmosphere. It was so that they began to prepare themselves for the glory of God. As months passed the
-                 ministry began to grow before his eyes, he knocked walls down in order to extend. After a year the ministry had grown in number
-                 and no longer fit in the house it was time to relocate. They found a place in anaheim and that is where they spent two years,
-                 finding God’s grace they continue to grow and being led to where the lord has taken them, Glory be to God tomorrow
-                 and the years to come, Amen!</p>
-        </div>
-        <div class="panel-footer">
-             Pastor Francisco Hernández
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="row">
-            <h3>Staff:  </h3>
-            <div class="sub-content">
-                <p><strong>Head Pastor:</strong>
-                <ul>
-                    <li> Francisco Hernández</li>
-                </ul>
-                <br>  <strong>Board:</strong>
-                <ul>
-                    <li>Blanca Hernandez </li>
-                    <li>Debbie Hernandez </li>
-                    <li>Gloria Valdovinos </li>
-                    <li>Ana Alvarez </li>
-                    <li>Rafael Valdovinos </li>
-                </ul>
-                <br><strong>Secretary, Youth and Worship Leader:</strong>
-                <ul>
-                    <li> Debbie Hernandez</li>
-                    <ul>
-                        <li>Phone: (714)273-5754 </li>
-                        <li>Email: <u>hernandezd93@outlook.com</u></li>
+<img class="page header-img" src="/media/img/wide_cross.jpg" alt="About Us">
+<div class="page-wrapper">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked hidden-xs">
+                        <li class="active"><a href="/about">About us</a></li>
+                        <li><a href="/meet-our-staff">Meet our Staff</a></li>
+                        <li><a href="/volunteer">Volunteer</a></li>
                     </ul>
-                </ul>
-                <br><strong>Evangelización:</strong>
-                <ul>
-                    <li>Jovita Garcia</p> </li>
-                </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="page-header">
+                        <h1 class="text-center">About Us</h1>
+                    </div>
+                    <div class="panel-body">
+                    <p>Ministerios Profetico Roca de Salvacion was founded on Magnolia Street the city of Fullerton on the the 20th of November 2007.
+                        It was led by a man with passion in the belief of God. It was his loyalty and commitment to the gospel
+                        that started from his own living room, feeling a sudden desire to fulfill a dream that God had placed in his heart
+                        just how God has used many men before. In the book of Genesis, God had called a leader to rise, a champion, with the
+                        sole purpose to lead a nation from the hands of Egypt to a new beginning.  For that reason Roca de Salvacion has the same desire to
+                         restore a community back to the laws of God. It all starts in Fullerton, spreading the gospel in correctional facilities, our local
+                         neighborhood, parks, etc. Roca de Salvacion was built from the ground up but with the grace of God it has gained wisdom and the desire
+                         for a higher reach. Starting with only a simple podium and a couple chairs and a small group that consisted of only his wife and kids
+                         and another member. Having no experience, no musical instruments, he decided to act and purchase a small cd player, it was
+                         the only method of worship, singing along to the music. Soon after he realized that his children needed to learn a musical instrument
+                         to to have better worship atmosphere. It was so that they began to prepare themselves for the glory of God. As months passed the
+                         ministry began to grow before his eyes, he knocked walls down in order to extend. After a year the ministry had grown in number
+                         and no longer fit in the house it was time to relocate. They found a place in anaheim and that is where they spent two years,
+                         finding God’s grace they continue to grow and being led to where the lord has taken them, Glory be to God tomorrow
+                         and the years to come, Amen!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+$(function() {
+    $('#sideNav a').on("click", function(event) {
+        event.preventDefault();
+        navbarLoader($(this));
+    });
+});
+</script>

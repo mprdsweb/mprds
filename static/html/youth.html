@@ -1,16 +1,39 @@
-<img class="header-img" src="/media/img/wide_cross.jpg" alt="About Us">
-<div class = "container">
-    <div class="page-header">
-        <h1 class="text-center">RDS Youth</h1>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <p>First and foremost, it is our purpose for every youth member to build a strong relationship God,
-                through the grace of God. In the Book of John 14 verse 6 Jesus answered, “ I am the way and the
-                the truth and life, no one comes to the father except through me.”</p><p> As youth members and believers
-                of Christ we must do God’s work and spread the gospel of salvation to our youth. We believe it is
-                important to follow God early in our youth to have a successful life. Proverbs 22:6 states,
-                “start children off on the way they should go, and even when they are old they will not leave it.”</p>
+<img class="page header-img" src="/media/img/youth.jpg" alt="Youth Ministry">
+<div class="page-wrapper">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked hidden-xs">
+                        <li><a href="/ministry/men">Men</a></li>
+                        <li><a href="/ministry/women">Women</a></li>
+                        <li class="active"><a href="/ministry/youth">Youth</a></li>
+                        <li><a href="/ministry/children">Children</a></li>
+                        <li><a href="/ministry">Worship</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="page-header">
+                        <h1 class="text-center">RDS Youth</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>First and foremost, it is our purpose for every youth member to build a strong relationship God,
+                            through the grace of God. In the Book of John 14 verse 6 Jesus answered, “ I am the way and the
+                            the truth and life, no one comes to the father except through me.”</p><p> As youth members and believers
+                            of Christ we must do God’s work and spread the gospel of salvation to our youth. We believe it is
+                            important to follow God early in our youth to have a successful life. Proverbs 22:6 states,
+                            “start children off on the way they should go, and even when they are old they will not leave it.”</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+$(function() {
+    $('#sideNav a').on("click", function(event) {
+        event.preventDefault();
+        navbarLoader($(this));
+    });
+});
+</script>

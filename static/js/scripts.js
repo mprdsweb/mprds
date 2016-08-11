@@ -13,12 +13,22 @@ function loader(url){
         }
     });
 }
+function navbarLoader(c){
+    var $linkClicked = c.attr("href").replace(/^#/, ""); //replaces every '#' with empty string
+    if($linkClicked.length > 0){
+        window.history.pushState(null, null, $linkClicked);     //manipulates the history
+        $(".nav a").parent().removeClass("active");
+        c.parent().addClass("active");
+        loader($linkClicked);
+    }
+}
 $(window).on('popstate', function() {
     var $pageRoot = window.location.pathname.replace(/^.*[\\/]/, "");
     if($pageRoot.length === 0)
         $pageRoot = 'home';
     loader($pageRoot);
 });
+
 
 $(function() {
     /*if(window.location.hash.length === 0){
@@ -36,18 +46,12 @@ $(function() {
         loader(url);
     });
 
-    $('#navbar a').on("click", function(event) {
+    $('.nav a').on("click", function(event) {
         if($(this).parent().hasClass("rfc-icons"))
             return;
         if($(event.target).attr('class') != 'dropdown-toggle')
-            $('#navbar').collapse('hide');
+            $('.navbar-collapse').collapse('hide');
         event.preventDefault();
-        var $linkClicked = $(this).attr("href").replace(/^#/, ""); //replaces every '#' with empty string
-        if($linkClicked.length > 0){
-            window.history.pushState(null, null, $linkClicked);     //manipulates the history
-            $("#navbar a").parent().removeClass("active");
-            $(this).parent().addClass("active");
-            loader($linkClicked);
-        }
+        navbarLoader($(this));
     });
 });

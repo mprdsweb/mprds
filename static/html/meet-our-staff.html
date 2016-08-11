@@ -1,0 +1,77 @@
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="col-sm-offset-3">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs staff-nav" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#pastor" aria-controls="pastor" role="tab" data-toggle="tab">
+                        <img class="staff-img" src="/media/img/pastor.jpg" alt="Pastor">
+                        <div class="staff-title">
+                            <h1>Fransico Hernandez</h1><h3>Head Pastor</h3>
+                        </div>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#blanca" aria-controls="blanca" role="tab" data-toggle="tab">
+                        <img class="staff-img" src="/media/img/blanca_hernandez.jpg" alt="Blanca Hernandez">
+                        <div class="staff-title">
+                            <h1>Blanca Hernandez</h1><h3>Board Member</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked hidden-xs">
+                        <li><a href="/about">About us</a></li>
+                        <li class="active"><a href="/meet-our-staff">Meet our Staff</a></li>
+                        <li><a href="/volunteer">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <!-- Tab panes -->
+                    <div class="tab-content panel-body">
+                        <div role="tabpanel" class="tab-pane fade in active" id="pastor">
+                            <div class="staff-title page-header">
+                                <h2>Francisco Hernandez</h2>
+                                <h3 class="pull-right">Head Pastor</h3>
+                            </div>
+                            <p>My name is Francisco Alfredo Hernandez was born on 1969 San Salvador
+                                in the department of Morazán. My dream since childhood was to work
+                                for the community by helping children, because there was much need
+                                for poverty in my country. Migrate to the United States in 1998,
+                                when I enter this country everything changed. I faced many
+                                situations not know the place, but my dreams were deep inside my
+                                heart and not the way how to proceed. My dreams in 1993 met Mr.
+                                At that time he was already married to my wife, Blanca Lidia Vicente
+                                Hernandez and already had a child and could not find how to impact or
+                                help the community until one day someone told me about Jesucristo.
+                                El Lord is the all he could help me to bring a word of encouragement to others.
+                                That's how I start to work in a church, the Christian doctrine
+                                fundamentally helped me in my life, and for me is very special.
+                                I know there are people in need of a change in life and only God can give,
+                                because outside of it there is no peace. I am now the pastor of the church,
+                                where he worked with a team to help the community and help the government
+                                reduce violence resulting studies that touch the human heart. If anyone is
+                                interested in knowing more about this ministry feel free to contact us</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="blanca">...</div>
+                        <div role="tabpanel" class="tab-pane fade" id="messages">...</div>
+                        <div role="tabpanel" class="tab-pane fade" id="settings">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function() {
+    $('#sideNav a').on("click", function(event) {
+        event.preventDefault();
+        navbarLoader($(this));
+    });
+});
+</script>

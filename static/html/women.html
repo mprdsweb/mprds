@@ -1,19 +1,42 @@
-<img class="header-img" src="/media/img/wide_cross.jpg" alt="About Us">
-<div class = "container">
-    <div class="page-header">
-        <h1 class="text-center">Women's Ministry</h1>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <p>Women Called to succeed is a group of women who were born in this
-                ministry, and whose call to serve is genuine, through the Holy Spirit.
-                These women are a very important part of the ministry, they love,
-                have passion , and vision to prosper. They know what they want to
-                achieve, they are defined as strong women and give love for woman who
-                joins our ministry. Women called to succeed have goals and purposes:
-                raising women , showing their value, and route them to have a closer
-                relationship with God. Every woman is determined to fulfill
-                each purpose for the glory of God.</p>
+<img class="page header-img" src="/media/img/wide_cross.jpg" alt="About Us">
+<div class="page-wrapper">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul id="sideNav" class="nav nav-pills nav-stacked hidden-xs">
+                        <li><a href="/ministry/men">Men</a></li>
+                        <li class="active"><a href="/ministry/women">Women</a></li>
+                        <li><a href="/ministry/youth">Youth</a></li>
+                        <li><a href="/ministry/children">Children</a></li>
+                        <li><a href="/ministry">Worship</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="page-header">
+                        <h1 class="text-center">Women's Ministry</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>Women Called to succeed is a group of women who were born in this
+                            ministry, and whose call to serve is genuine, through the Holy Spirit.
+                            These women are a very important part of the ministry, they love,
+                            have passion , and vision to prosper. They know what they want to
+                            achieve, they are defined as strong women and give love for woman who
+                            joins our ministry. Women called to succeed have goals and purposes:
+                            raising women , showing their value, and route them to have a closer
+                            relationship with God. Every woman is determined to fulfill
+                            each purpose for the glory of God.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+$(function() {
+    $('#sideNav a').on("click", function(event) {
+        event.preventDefault();
+        navbarLoader($(this));
+    });
+});
+</script>
