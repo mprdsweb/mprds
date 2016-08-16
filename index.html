@@ -46,7 +46,7 @@
                 <a class="navbar-brand hidden-xs" href="/" style="position:relative;z-index:99;">
                     <img src="/media/img/logo.png" height="120" width="120" alt="Ministerios Profetico Roca de Salvacion">
                 </a>
-                <div class="rfc-icons pull-right hidden-xs">
+                <div class="rfc-icons target pull-right hidden-xs">
     				<a href="https://www.facebook.com/groups/RDSyouth" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
 				</div>
                 <div class="nav-menu-wrapper">
@@ -57,8 +57,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/meet-our-staff">Meet our Staff</a></li>
-                                    <li><a href="/volunteer">Volunteer</a></li>
-                                    <li><a href="/gallery">Media</a></li>
+                                    <li><a href="#">Media</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -68,21 +67,18 @@
                                     <li><a href="/ministry/women">Women</a></li>
                                     <li><a href="/ministry/youth">Youth</a></li>
                                     <li><a href="/ministry/children">Children</a></li>
-                                    <li><a href="/ministry">Worship</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/outreach">Outreach Programs</a></li>
-                                    <li><a href="/services/missions">Missions</a></li>
                                     <li><a href="#">Sembrando la Semilla</a></li>
                                     <li><a href="/services/bible-studies">Bible Studies</a></li>
-                                    <li><a href="/services/prayer-chain">Prayer Chain</a></li>
                                 </ul>
                             </li>
                             <li><a href="/calendar">Calendar</a></li>
-                            <li><a href="/donations">Donations</a></li>
+                            <li class="target"><a onclick="$('#donateForm').submit();"><form id="donateForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="L8V3V6SSJHMDS"></form>Donations</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
@@ -94,7 +90,7 @@
     <!--Main-->
     <main id="main-content" data-html="home"></main>
     <!--End Main-->
-      <hr class="featurette-divider">
+     <!-- <hr class="featurette-divider">-->
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">

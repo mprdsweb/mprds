@@ -47,7 +47,7 @@ $(function() {
     });
 
     $('.nav a').on("click", function(event) {
-        if($(this).parent().hasClass("rfc-icons"))
+        if($(this).parent().hasClass("target"))
             return;
         if($(event.target).attr('class') != 'dropdown-toggle')
             $('.navbar-collapse').collapse('hide');
