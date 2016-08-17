@@ -1,0 +1,138 @@
+<!-- Calendar initializer -->
+<script>
+$(document).ready(function() {
+    // page is now ready, initialize the calendar...
+    <!-- Date Initializer -->
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+
+    var calendar = $('#calendar').fullCalendar({
+		header:{
+            left: '',
+            center: 'prev, title, next',
+            right: 'month agendaWeek'
+        },
+        defaultView: 'agendaWeek',
+        minTime: '10:00:00',
+        maxTime: '22:00:00',
+        viewRender: function (view) {
+            var h;
+            if (view.name == "month") {
+                h = NaN;
+            }
+            else {
+                h = 700;  // high enough to avoid scrollbars
+            }
+            $('#calendar').fullCalendar('option', 'contentHeight', h);
+        },
+        views: {
+            agenda:{
+                columnFormat: 'ddd D',
+                titleFormat: 'D MMM YYYY'
+            }
+        },
+        selectable: true,
+        eventColor: '#5dd55d',
+        events: {
+            url: '/includes/process_events.php',
+            type: 'POST',
+            data: {
+                type: 'fetch'
+            }
+        }
+    });
+});
+</script>
+<script>
+function addEventModal(){
+    $('#myModal').modal();
+}
+</script>
+
+<!--Calendar-->
+<div class="page-wrapper">
+    <div class="container">
+        <div class="button-group">
+            <button type="button" class="btn btn-primary" date-toggle="modal" data-target="#myModal" onclick="addEventModal();"style="margin-top:2em">Add an Event</button>
+        </div>
+        <div class="panel panel-default" style="margin-top: 1em;">
+            <div id='calendar'></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Event to Calendar</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="start">Start Date:</label>
+                            <input type="date" class="form-control" id="start" placeholder="Start">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="start">Start Time:</label>
+                            <input type="time" class="form-control" id="start" placeholder="Start">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="start">End Date:</label>
+                            <input type="date" class="form-control" id="start" placeholder="Start">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="start">End Time:</label>
+                            <input type="time" class="form-control" id="start" placeholder="Start">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="checkbox">
+                            <label><input type="checkbox">All Day Event</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Event Subject">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            Event Description
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputFile">Picture File</label>
+                            <input type="file" id="exampleInputFile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

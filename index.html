@@ -16,7 +16,11 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 <!--End Bootstrap info -->
     <!--Custom Scripts-->
+    <!--
     <script src="/static/js/scripts.js"></script>
+    -->
+	<script src="static/js/handlers.js"></script>
+	<script src="static/js/app.js"></script>
     <!--Custom Styles-->
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="/static/css/carousel.css">
@@ -26,6 +30,7 @@
     <script src='/fullcalendar/lib/moment.min.js'></script>
     <script src='/fullcalendar/fullcalendar.js'></script>
     <link rel="stylesheet" href="/fullcalendar/fullcalendar.css"/>
+    <link rel="stylesheet" href="/static/css/fullcalendar-custom.css"/>
 </head>
 <body>
     <!--Navigation bar-->
@@ -55,31 +60,30 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/about">About us</a></li>
-                                    <li><a href="/meet-our-staff">Meet our Staff</a></li>
+                                    <li><a href="#/about">About us</a></li>
+                                    <li><a href="#/meet-our-staff">Meet our Staff</a></li>
                                     <li><a href="#">Media</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ministries<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/ministry/men">Men</a></li>
-                                    <li><a href="/ministry/women">Women</a></li>
-                                    <li><a href="/ministry/youth">Youth</a></li>
-                                    <li><a href="/ministry/children">Children</a></li>
+                                    <li><a href="#/ministry/men">Men</a></li>
+                                    <li><a href="#/ministry/women">Women</a></li>
+                                    <li><a href="#/ministry/youth">Youth</a></li>
+                                    <li><a href="#/ministry/children">Children</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/outreach">Outreach Programs</a></li>
-                                    <li><a href="#">Sembrando la Semilla</a></li>
-                                    <li><a href="/services/bible-studies">Bible Studies</a></li>
+                                    <li><a href="#">Outreach Programs</a></li>
+                                    <li><a href="#/services/bible-studies">Bible Studies</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/calendar">Calendar</a></li>
+                            <li><a href="#/calendar">Calendar</a></li>
                             <li class="target"><a onclick="$('#donateForm').submit();"><form id="donateForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="L8V3V6SSJHMDS"></form>Donations</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="#/contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -88,7 +92,7 @@
     </header>
     <!--End Nav bar-->
     <!--Main-->
-    <main id="main-content" data-html="home"></main>
+    <main id="main-content" data-html="en/html/home.html"></main>
     <!--End Main-->
      <!-- <hr class="featurette-divider">-->
     <!-- FOOTER -->
@@ -97,13 +101,10 @@
             <div class="row" style="margin-top: 1em; margin-bottom: 1em;">
                 <div class="pull-right">
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Language
-                        <span class="caret"></span>
-                        </button>
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Language<span class="caret"></span></button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="http://mprds.org">English</a></li>
-                            <li><a href="http://sp.mprds.org">Spanish</a></li>
+                            <li><a href="http://mprds.org/#/sp">Espanol</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1,0 +1,133 @@
+<div id="map"></div>
+<!--Google Maps Scripts-->
+<script>
+    function initMap() {
+        var mapDiv = document.getElementById('map');
+        var myLatLng = {lat: 33.866770, lng: -117.969270}
+        var map = new google.maps.Map(mapDiv, {
+            center: myLatLng,
+            zoom: 17,
+            scrollwheel: false
+        });
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Ministerio Profetico Roca de Salvacion'
+        });
+        google.maps.event.addDomListener(window, "resize", function() {
+            var center = map.getCenter();
+            google.maps.event.trigger(map, "resize");
+            map.setCenter(center);
+        });
+    }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFDjpGlaHxXfNBrd-smErtFEqCZZDR2VA&callback=initMap">
+</script>
+<!--End Google Maps-->
+
+<!--Contact Start Location and Staff START-->
+<div class="container">
+    <div class="page-header">
+        <h1 class="text-center">Contact Us</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+                <h3>Location:</h3>
+                <div class="sub-content">
+                    <address>
+                        2353 W. Valencia Dr.<br>
+                        Section C and D<br>
+                        Fullerton CA, 92833
+                    </address>
+                </div>
+                <h3>Staff:  </h3>
+                <div class="sub-content">
+                    <strong>Head Pastor:</strong>
+                    <ul>
+                        <li> Francisco Hernandez</li>
+                    </ul>
+                    <strong>Board:</strong>
+                    <ul>
+                        <li>Blanca Hernandez </li>
+                        <li>Debbie Hernandez </li>
+                        <li>Gloria Valdovinos </li>
+                        <li>Ana Alvarez </li>
+                    </ul>
+                    <strong>Secretary, Youth and Worship Leader:</strong>
+                    <ul>
+                        <li> Debbie Hernandez</li>
+                        <ul>
+                            <li>Phone: (714) 273-5754 </li>
+                            <li> Email: office@mprds.org </li>
+                        </ul>
+                    </ul>
+                    <strong>Evangelización:</strong>
+                    <ul>
+                        <li>Jovita Garcia</li>
+                    </ul>
+                </div>
+        </div>
+        <div class="col-sm-6">
+            <h3>Get in touch</h3>
+            <div class="sub-content">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contact_name">Name</label>
+                        <input type="text" class="form-control" id="contact_name" placeholder="Name" name="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_email">Email address</label>
+                        <input type="email" class="form-control" id="contact_email" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_phone">Phone</label>
+                        <input type="tel" class="form-control" id="contact_phone" placeholder="Phone" name="phoneNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact_message">Message</label>
+                        <textarea id="contact_message" class="form-control" rows="5" placeholder="Message" name="message" required></textarea>
+                    </div>
+                    <input id="submitButton" class="btn btn-default" type="submit" value="Send Message">
+                    <div id="imgDiv" style="display:none"><img src="/media/img/ajax-loader.gif"/></div>
+                </form>
+                <div id="alertContainer" class="alert" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+    $('#contactForm').submit(function(e){
+        e.preventDefault();
+        var $form = $('form');
+        $('#imgDiv').show();
+        $('#submitButton').addClass("disabled");
+        $.ajax({
+            url: "/includes/send-mail.php",
+            type: 'POST',
+            data: $form.serialize(),
+            dataType: 'json',
+            success: function(response){
+                console.log(response);
+                $('#contactForm')[0].reset();
+                $('#imgDiv').hide();
+                $('#submitButton').removeClass("disabled");
+                // Show the message
+                response.result === 'error'
+                   ? $('#alertContainer')
+                       .removeClass('alert-success')
+                       .addClass('alert-warning')
+                       .html('Sorry, cannot send the message')
+                       .show()
+                   : $('#alertContainer')
+                       .removeClass('alert-warning')
+                       .addClass('alert-success')
+                       .html('Your message has been successfully sent')
+                       .show();
+            }
+        });
+    });
+});
+</script>
+<!--Contact Start Location and Staff END-->
