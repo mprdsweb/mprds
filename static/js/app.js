@@ -1,4 +1,5 @@
 var main;
+var upcomingEvents;
 
 String.prototype.capitalize = function() {
 	if (this.length <= 1) return this;
@@ -25,6 +26,7 @@ $(document).ready(function() {
 	        loader($("[data-html='"+url+"']"), url, initialize);
 	    });
 	}
+	getEventsAsJson();
 	$('.nav a').on("click", function(event) {
 	    if($(event.target).attr('class') != 'dropdown-toggle')
 	        $('.navbar-collapse').collapse('hide');
@@ -40,4 +42,21 @@ function loader(div,url,cb) {
     div.load(url, function(response, status, xhr) {
 		if (cb && typeof cb === "function") cb(xhr); //Calls function argument passing the page xhr status
 	});
+}
+
+function getEventsAsJson(){
+	$.ajax({
+        type: 'POST',
+		url: '/includes/process_events.php',
+        data: 'type=upcoming',
+        dataType: 'json',
+        success: function(msg){
+            if(parseInt(msg)!=0 && msg.length > 0){
+				upcomingEvents = msg;
+				$.each(upcomingEvents, function(index, event){
+					console.log(event.title);
+				});
+            }
+        }
+    });
 }

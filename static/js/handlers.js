@@ -1,4 +1,7 @@
 var handlers = [
+    //["/post/.*", postHandler],
+    //["/post", postHandler],
+    //["/user", userHandler],
     ["/sp/.*", spanishHandler],
     ["/sp", spanishHandler],
     ["/en", englishHandler],
@@ -44,6 +47,10 @@ function pageHandler(path1, path2, path3) {
             });
             //window.location.href = "#";
         }
+    });
+}
+function loginHandler(){
+    loader(main, "static/html/user.html", function() {
     });
 }
 

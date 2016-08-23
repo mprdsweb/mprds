@@ -1,0 +1,34 @@
+<div class="page-wrapper">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="gallery">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $.ajax({
+        type: 'GET',
+        async: false,
+		url: '/includes/process_images.php',
+        data: 'type=fetch',
+        dataType: 'json',
+        success: function(msg){
+            if(parseInt(msg)!=0 && msg.length > 0){
+                gallery = $('.gallery');
+				$.each(msg, function(index, event){
+                    var imgURL = event.substring(2);
+                    var imgDiv = "<a href='"+imgURL+"'><img src='"+imgURL+"'></a>";
+                    gallery.append(imgDiv);
+				});
+            }
+        }
+    });
+    $('.gallery').bootstrapGallery({
+      iconset: "fontawesome"
+    });
+    $('.gallery').justifyGallery();
+});
+</script>

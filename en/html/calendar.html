@@ -14,7 +14,7 @@ $(document).ready(function() {
             center: 'prev, title, next',
             right: 'month agendaWeek'
         },
-        defaultView: 'agendaWeek',
+        defaultView: 'month',
         minTime: '10:00:00',
         maxTime: '22:00:00',
         viewRender: function (view) {
@@ -41,6 +41,15 @@ $(document).ready(function() {
             data: {
                 type: 'fetch'
             }
+        },
+        eventClick:  function(event, jsEvent, view) {
+            $('#modalTitle').html(event.title);
+            $('#modalBody').html("<div class='event-description'>"+event.description+"</div>");
+            if(event.img_path != null){
+                $('#modalBody').prepend("<img class='event-img' src=''>");
+                $(".event-img").attr("src", event.img_path);
+            }
+            $('#fullCalModal').modal();
         }
     });
 });
@@ -58,12 +67,29 @@ function addEventModal(){
             <button type="button" class="btn btn-primary" date-toggle="modal" data-target="#myModal" onclick="addEventModal();"style="margin-top:2em">Add an Event</button>
         </div>
         <div class="panel panel-default" style="margin-top: 1em;">
-            <div id='calendar'></div>
+            <div id="calendar" class=""></div>
+            <div class="calendar-list visible-xs"></div>
         </div>
     </div>
 </div>
 
-<!-- Modal -->
+<!-- View Event Modal -->
+<div id="fullCalModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 id="modalTitle" class="modal-title"></h4>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Event Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -71,68 +97,93 @@ function addEventModal(){
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Add Event to Calendar</h4>
             </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="start">Start Date:</label>
-                            <input type="date" class="form-control" id="start" placeholder="Start">
+            <form id="newEventForm">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="startDate">Start Date:</label>
+                                <input type="date" class="form-control" id="startDate" name="startDate" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="startTime">Start Time:</label>
+                                <input type="time" class="form-control" id="startTime" name="startTime">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="start">Start Time:</label>
-                            <input type="time" class="form-control" id="start" placeholder="Start">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="endDate">End Date:</label>
+                                <input type="date" class="form-control" id="endDate" name="endDate" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="endTime">End Time:</label>
+                                <input type="time" class="form-control" id="endTime" name="endTime">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="allDay" name="allDay">All Day Event</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Event Title</label>
+                                <input type="text" class="form-control" id="title" placeholder="Event Subject" name="title" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Event Description</label>
+                                <textarea class="form-control" id="eventDesc" rows="3" name="description" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Picture File</label>
+                                <input type="file" id="exampleInputFile" name="img_path">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="start">End Date:</label>
-                            <input type="date" class="form-control" id="start" placeholder="Start">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="start">End Time:</label>
-                            <input type="time" class="form-control" id="start" placeholder="Start">
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input id="submitButton" class="btn btn-primary" type="submit" value="Save changes">
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="checkbox">
-                            <label><input type="checkbox">All Day Event</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Event Subject">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            Event Description
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="exampleInputFile">Picture File</label>
-                            <input type="file" id="exampleInputFile">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            </form>
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+    $('#newEventForm').submit(function(e){
+        e.preventDefault();
+        var $form = $('form');
+        $('#submitButton').addClass("disabled");
+        $.ajax({
+            url: "/includes/process_events.php",
+            type: 'POST',
+            data: "type=new&"+$form.serialize(),
+            dataType: 'json',
+            success: function(response){
+                console.log($form.serialize());
+                console.log(response);
+                location.reload();
+            }
+        });
+    });
+});
+</script>
